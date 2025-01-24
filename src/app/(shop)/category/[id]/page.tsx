@@ -1,11 +1,13 @@
 import { notFound } from "next/navigation";
 import { initialData } from "@/seed/seed";
+
 import Title from "@/components/ui/title/Title";
 import ProductGrid from "@/components/products/ProductGrid";
+
 import type { ValidCategory } from "@/interfaces/product.interface";
 
-const seedProducts = initialData.products;
 
+const seedProducts = initialData.products;
 const labels: Record<ValidCategory, string> = {
   men: "para hombres",
   women: "para mujeres",
