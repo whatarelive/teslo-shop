@@ -14,15 +14,15 @@ const labels: Record<ValidCategory, string> = {
 }
 
 interface Props {
-  params: {
+  params: Promise<{
     id: ValidCategory;
-  };
+  }>;
 }
 
-export default function CategoryPage({ params }: Props) {
-  const { id } = params;
+export default async function CategoryPage({ params }: Props) {
+  const { id } = await params;
 
-  const products = seedProducts.filter((p) => p.gender === id);
+  const products = seedProducts.filter((product) => product.gender === id);
   
   if (products.length === 0) {
     notFound();
