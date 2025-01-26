@@ -4,6 +4,7 @@ import { initialData } from "@/seed/seed";
 
 import SelectedSize from "@/components/products/SelectedSize";
 import SelectedQuantity from "@/components/products/SelectedQuantity";
+import ProductSlideshow from "@/components/products/ProductSlideshow";
 
 
 interface Props {
@@ -24,9 +25,11 @@ export default async function ProductPage({ params }: Props) {
   return (
     <div className="mt-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3">
       {/* SlideShow */}
-      <div className="col-span-1 md:col-span-2">
-        <h1>Hola</h1>
-      </div>
+      <ProductSlideshow
+        title={ product.title }
+        images={ product.images }
+        className="col-span-1 md:col-span-2"
+      />
 
       {/* Product Details */}
       <div className="col-span-1 px-5">
