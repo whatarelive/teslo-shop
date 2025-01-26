@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FC } from "react";
+import Image from "next/image";
 import type { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode, Navigation, Thumbs } from "swiper/modules";
@@ -10,7 +11,6 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import "@/components/styles/styles.css";
-import Image from "next/image";
 
 interface Props {
     images: string[];
@@ -46,6 +46,7 @@ const ProductSlideshow: FC<Props> = ({ images, title, className }) => {
                         height={700} 
                         src={`/products/${img}`} 
                         alt={title} 
+                        className="rounded-lg object-fill"
                     />
                 </SwiperSlide>
             ))
